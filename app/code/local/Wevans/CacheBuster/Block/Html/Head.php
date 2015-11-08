@@ -59,10 +59,10 @@ class Wevans_CacheBuster_Block_Html_Head extends Mage_Page_Block_Html_Head
             $params = trim($params);
             $params = $params ? ' ' . $params : '';
             if ($mergedUrl) {
-                $html .= sprintf($format, $mergedUrl . $cacheHelper->getVersion(), $params);
+                $html .= sprintf($format, $cacheHelper->getVersionUrl($mergedUrl), $params);
             } else {
                 foreach ($rows as $src) {
-                    $html .= sprintf($format, $src . $cacheHelper->getVersion(), $params);
+                    $html .= sprintf($format, $cacheHelper->getVersionUrl($src), $params);
                 }
             }
         }
