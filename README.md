@@ -13,8 +13,15 @@ All configuration for this module can be found in the System section under the g
 This extension comes with a easy to use helper for adding the version number to other assets if needed. You can use this helper to add the version number to the end of any url such as scripts added outside of the normal addItem method, or images.
 
 
-    <?php $versionNum = Mage::helper('cachebuster')->getVersion(); ?>
-    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css<?php echo $versionNum; ?>" rel="stylesheet">
+    <?php 
+      $cacheHelper = Mage::helper('cachebuster');
+      $versionedUrl = $cacheHelper->getVersionUrl($url);
+    ?>
+
+Updating the cache version number in your own observer or extension
+
+    Mage::getConfig()->saveConfig('system/cache_buster/version', $versionNum);
+    
 
 ## Compatibility
 This extension rewrites Mage_Page_Block_Html_Head
