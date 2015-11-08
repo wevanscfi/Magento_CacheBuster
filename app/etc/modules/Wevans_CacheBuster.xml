@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Wevans_CacheBuster>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Wevans_CacheBuster>
+  </modules>
+</config>

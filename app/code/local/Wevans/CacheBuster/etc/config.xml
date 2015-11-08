@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Wevans_CacheBuster>
+            <version>1.0.0</version>
+        </Wevans_CacheBuster>
+    </modules>
+    <global>
+        <blocks>
+            <cachebuster>
+                <class>Wevans_CacheBuster_Block</class>
+            </cachebuster>
+            <page>
+                <rewrite>
+                    <html_head>Wevans_CacheBuster_Block_Html_Head</html_head>
+                </rewrite>
+            </page>
+        </blocks>
+        <helpers>
+            <cachebuster>
+                <class>Wevans_CacheBuster_Helper</class>
+            </cachebuster>
+        </helpers>
+        <events>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <Wevans_CacheBuster_Cache_Type_Observer>
+                        <type>singleton</type>
+                        <class>Wevans_CacheBuster_Model_Observer</class>
+                        <method>updateVersion</method>
+                    </Wevans_CacheBuster_Cache_Type_Observer>
+                </observers>
+            </adminhtml_cache_refresh_type>
+            <adminhtml_cache_flush_all>
+                <observers>
+                    <Wevans_CacheBuster_Cache_All_Observer>
+                        <type>singleton</type>
+                        <class>Wevans_CacheBuster_Model_Observer</class>
+                        <method>updateVersion</method>
+                    </Wevans_CacheBuster_Cache_All_Observer>
+                </observers>
+            </adminhtml_cache_flush_all>
+        </events>
+    </global>
+</config>
