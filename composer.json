@@ -1,0 +1,11 @@
+{
+  "name": "wevanscfi/Magento_CacheBuster",
+  "type": "magento-module",
+  "description": "A simple extension for adding version numbers to magento js and css which auto update on cache clear.",
+  "license": "MIT",
+  "homepage": "https://github.com/wevanscfi/Magento_CacheBuster",
+  "require": {
+    "php": ">=5.3",
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}
